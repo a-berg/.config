@@ -1,0 +1,37 @@
+# julia
+[[language]]
+name = "julia"
+scope = "source.julia"
+injection-regex = "julia"
+file-types = ["jl"]
+roots = ["Project.toml", "Manifest.toml", "JuliaProject.toml"]
+comment-token = "#"
+language-servers = ["julia"]
+indent = { tab-width = 4, unit = "    " }
+
+[language-server.julia]
+command = "julia"
+timeout = 60
+args = ["-e", "using LanguageServer; runserver();"]
+
+# typst
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+[language-server.tinymist]
+command = "tinymist"
+
+# rust
+[[language-server.rust-analyzer.config]]
+check.command = "clippy"
+
+# nu
+[[language]]
+name = "nu"
+scope = "source.nu"
+injection-regex = "nu"
+file-types = ["nu"]
+roots = []
+auto-format = true
+formatter = {command="nufmt", args = ["--stdin"]}

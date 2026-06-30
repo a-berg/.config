@@ -48,3 +48,8 @@ X = "select_line_above"
 [keys.select]
 A-x = "extend_to_line_bounds"
 X = "select_line_above"
+
+[keys.normal."C-backspace"]
+r = [":config-reload", ":reload-all"]
+o = ":config-open"
+l = ":o ~/.config/helix/languages.toml"
