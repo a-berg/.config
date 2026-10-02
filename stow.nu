@@ -16,6 +16,6 @@ $config_dirs | each { |dir_path|
     let target_path = $"~/.config/" | path expand
     
     # Create the symlink using the external OS command
-    # ^ln -s $dir_path $target_path
+    ^ln -s $dir_path $target_path
     print $"Linked ($folder_name) to ($target_path)"
 }

@@ -1,4 +1,4 @@
-theme = "nord"
+theme = "iceberg-light"
 
 [editor]
 # Show currently open buffers, only when more than one exists.
@@ -9,10 +9,15 @@ cursorline = true
 line-number = "relative"
 # Show a ruler at column 120
 rulers = [120]
+# reflow default value
+text-width = 100
 # Force the theme to show colors
 true-color = true
 # Minimum severity to show a diagnostic after the end of a line
 end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+other-lines = "error"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -53,3 +58,6 @@ X = "select_line_above"
 r = [":config-reload", ":reload-all"]
 o = ":config-open"
 l = ":o ~/.config/helix/languages.toml"
+
+[keys.normal."+"]
+d = ":insert-output date +'%%d, %%m, %%Y'"

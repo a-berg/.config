@@ -1,3 +1,18 @@
+# python
+[[language]]
+name = "python"
+language-servers = ["basedpyright", "ruff"]
+formatter = { command = "ruff", args = ["format", "-"]}
+
+# rust
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt" }
+auto-format = true
+language-servers = ["rust-analyzer"]
+[[language-server.rust-analyzer.config]]
+check.command = "clippy"
+
 # julia
 [[language]]
 name = "julia"
@@ -8,7 +23,6 @@ roots = ["Project.toml", "Manifest.toml", "JuliaProject.toml"]
 comment-token = "#"
 language-servers = ["julia"]
 indent = { tab-width = 4, unit = "    " }
-
 [language-server.julia]
 command = "julia"
 timeout = 60
@@ -18,13 +32,8 @@ args = ["-e", "using LanguageServer; runserver();"]
 [[language]]
 name = "typst"
 language-servers = ["tinymist"]
-
 [language-server.tinymist]
 command = "tinymist"
-
-# rust
-[[language-server.rust-analyzer.config]]
-check.command = "clippy"
 
 # nu
 [[language]]
