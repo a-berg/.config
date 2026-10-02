@@ -1,0 +1,117 @@
+ls
+typst query diary.typ '<econ>'
+typst query diary.typ '<econ>' | to json
+typst query diary.typ '<econ>' | query json "func"
+typst query diary.typ '<econ>' | from json
+typst query diary.typ '<econ>' | from json -s
+typst query diary.typ '<econ>' | from json | get 0
+typst query diary.typ '<econ>' | from json | get 'children'
+ls
+hx $nu.config-path
+fg
+fg %1
+job list
+job unfreeze 
+source $nu.config-path
+ls
+fg
+$env.config.table.mode = "single"
+ls
+$env.config.table.mode
+$env.config.table.mode = "thin"; ls
+$env.config.table.mode = "basic"; ls
+$env.config.table.mode = "compact"; ls
+$env.config.table.mode = "compact_double"; ls
+$env.config.table.mode = "single"; ls
+$env.config.table.mode = "light"; ls
+$env.config.table.mode = "heavy"; ls
+fg
+source $nu.config-path
+ls
+fg
+ghostty +list-themes | less
+fg
+exit
+hx $nu.config-path
+ls
+vivid themes
+vivid 
+vivid generate iceberg
+$env.LS_COLORS = (vivid generate one-light)
+ls
+$env.LS_COLORS = (vivid generate solarized-light)
+ls
+$env.LS_COLORS = (vivid generate ayu)
+ls
+$env.LS_COLORS = (vivid generate rose-pine); ls
+$env.LS_COLORS = (vivid generate nord); ls
+$env.LS_COLORS = (vivid generate iceberg-dark); ls
+$env.LS_COLORS = (vivid generate modus-operandi); ls
+$env.LS_COLORS = (vivid generate gruvbox-light); ls
+$env.LS_COLORS = (vivid generate rose-pine-dawn); ls
+$env.LS_COLORS = (vivid generate rose-pine-moon); ls
+$env.LS_COLORS = (vivid generate snazzy); ls
+$env.LS_COLORS = (vivid generate catppuccin-latte); ls
+vivid preview
+vivid preview molokai
+br
+br 
+broot
+$env.EDITOR
+broot --print-shell-function nushell
+broot --print-shell-function nushell | nu-highlight | less
+broot --print-shell-function nushell | nu-highlight | less -R
+broot --install
+br
+date --help
+date now | format date
+date now
+format date --help
+date now | format date "%d, %m, %Y"
+cd
+$env.PROMPT_COMMAND
+($env.PROMPT_COMMAND)
+starship -h
+ls $nu.data-dir
+$env.XDG_DATA_DIRS
+$env.XDG_DATA_DIRS | split row ':'
+$env.XDG_CONFIG_HOME
+starship init nu | bat
+starship init nu | less -R
+starship init nu | nu-highlight | less -R
+overlay list
+$nu.vendor-autoload-dirs
+$env.HOME
+"$env.HOME/.local/share"
+if ($env.HOME) { echo 'hello' }
+if ($env.HOME != None) { echo 'hello' }
+if ($env.XDF_DATA_HOME != None) { echo 'hello' } else { echo 'world' }
+if ($env.XDF_DATA_HOME | empty) { echo 'hello' } else { echo 'world' }
+$env.XDG_DATA_HOME
+$env | select prompt | empty
+$env | select prompt | empty?
+config | select prompt | empty?
+'XDG_DATA_HOME' in $env
+if ('XDF_DATA_HOME' in $env) { echo 'hello' } else { echo 'world' }
+if !('XDF_DATA_HOME' in $env) { echo 'hello' } else { echo 'world' }
+if not('XDF_DATA_HOME' in $env) { echo 'hello' } else { echo 'world' }
+if not ('XDF_DATA_HOME' in $env) { echo 'hello' } else { echo 'world' }
+source $nu.config-path
+$env.XDG_DATA_HOME
+source $nu.config-path
+$env.PROMPT_COMMAND
+pwd
+ls
+ls -h
+ls -s
+ls -l
+ls --mode
+gstatus
+ls | grid -c
+ls | sort-by type name | grid -c
+source $nu.config-path
+br -h
+br --help
+br
+nupm --help
+ps
